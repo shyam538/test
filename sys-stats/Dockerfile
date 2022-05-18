@@ -1,6 +1,7 @@
-FROM node:14.19-slim
+FROM node:14.19-alpine
 WORKDIR /app
 COPY package.json .
-RUN npm install --production
-COPY . .
+RUN npm install 
+COPY . . 
+EXPOSE 3000
 CMD ["npm", "start"]
