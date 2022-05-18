@@ -1,0 +1,26 @@
+services:
+  proxy:
+    depends_on:
+      - frontend
+      - backend
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "80:80"
+
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: ./sys-stats
+    ports:
+      - "3000:3000"
+
