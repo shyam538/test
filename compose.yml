@@ -23,4 +23,3 @@ services:
       context: ./sys-stats
     expose:
       - "3000"
-
