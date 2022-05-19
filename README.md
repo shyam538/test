@@ -10,14 +10,14 @@ Ask was to create seperate containers for each app and bring them up with single
 
 1. Add Dockerfile under each app i.e under `api` (backend) 
 2. Add Dockerfile `sys-stats` ( frontend ) 
-	a. Add proxy entry in package.json - so that frontend app can call backend
-	b. Add .env with variable `DANGEROUSLY_DISABLE_HOST_CHECK=true` 
+	* Add proxy entry in package.json - so that frontend app can call backend
+	* Add .env with variable `DANGEROUSLY_DISABLE_HOST_CHECK=true` 
 3. Make folder `nginx` ( proxy )
-	a. Add basic configuration file to proxy frontend
-	b. Add Dockerfile
+	* Add basic configuration file to proxy frontend
+	* Add Dockerfile
 4. create compose.yml under project root folder
-	a. Build context would be Dockerfile under respective app
-	b. Only publish port for proxy server ( compose will build a default network where containers can refer to each other with service name)
+	* Build context would be Dockerfile under respective app
+	* Only publish port for proxy server ( compose will build a default network where containers can refer to each other with service name)
 5. From project root folder run `docker-compose up --build`
  
 ## Task 2 - Deploy on Cloud
